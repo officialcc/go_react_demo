@@ -23,6 +23,8 @@ import DeleteIcon from "@mui/icons-material/Delete";
 import CheckIcon from "@mui/icons-material/Check";
 import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
+import goLogo from "./assets/go.png";
+import reactLogo from "./assets/react.png";
 
 function App({ mode, setMode }) {
   const toggleMode = () => {
@@ -63,7 +65,7 @@ function App({ mode, setMode }) {
       <AppBar position="static">
         <Toolbar>
           <Typography variant="h6" sx={{ flexGrow: 1 }}>
-            Go + React Todo List Demo
+            Go + React Full Stack Todo List Demo
           </Typography>
           <IconButton color="inherit" onClick={toggleMode}>
             {mode === "light" ? <Brightness4Icon /> : <Brightness7Icon />}
@@ -141,7 +143,13 @@ function App({ mode, setMode }) {
               </List>
             ) : (
               <Paper sx={{ p: 2, textAlign: "center", color: "text.secondary" }}>
-                No todos yet — add one above!
+                No tasks yet — add one now!
+
+                <Stack direction="row" spacing={2} justifyContent="center" alignItems="center" mt={2}>
+                  <img src={goLogo} alt="Go logo" style={{ height: 50 }} />
+                  <Typography variant="h6">×</Typography>
+                  <img src={reactLogo} alt="React logo" style={{ height: 50 }} />
+                </Stack>
               </Paper>
             )
           )}
