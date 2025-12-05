@@ -1,4 +1,7 @@
-const API_BASE = "/api"; // Vite proxy forwards to Go backend
+const API_BASE =
+  import.meta.env.MODE === "development"
+    ? "/api"
+    : "/api";
 
 export async function getTodos() {
   const res = await fetch(`${API_BASE}/todos`);
